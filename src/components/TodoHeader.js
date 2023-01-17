@@ -1,5 +1,28 @@
 import React from 'react';
+import styled from 'styled-components';
 import { useTodoState } from '../context/todoContext';
+
+const TodoHeadBlock = styled.div`
+    padding: 48px 32px;
+    border-bottom: 1px solid #e9ecef;
+    h1{
+        font-size:36px;
+        color:#343a40;
+    }
+    div{
+        &:nth-child(2){
+            margin-top:4px;
+            color:#868e96;
+            font-size:21px;
+        }
+        &:nth-child(3){
+            margin-top:40px;
+            color:#20c997;
+            font-size:18px;
+            font-weight:bold;
+        }
+    }
+`;
 
 
 const TodoHeader = () => {
@@ -13,11 +36,11 @@ const TodoHeader = () => {
         day:'numeric'
     })
     return (
-        <div>
+        <TodoHeadBlock>
             <h1>TodoList</h1>
             <div>{dateString}</div>
             <div>할일 {undoneTasks.length}개 남음</div>
-        </div>
+        </TodoHeadBlock>
     );
 };
 
