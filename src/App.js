@@ -1,11 +1,18 @@
 import './App.css';
-import Users from './components/Users';
+import TodoCreate from './components/TodoCreate';
+import TodoHeader from './components/TodoHeader';
+import Todoitem2 from './components/Todoitem2';
+import TodoContext from './context/todoContext';
 
 function App() {
   return (
-    <div className="App">
-      <Users/>
-    </div>
+    <TodoContext>
+      <div className="App">
+        <TodoHeader></TodoHeader>
+        <TodoCreate></TodoCreate>
+        <Todoitem2></Todoitem2>
+      </div>
+    </TodoContext>
   );
 }
 
